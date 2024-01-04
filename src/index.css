@@ -8,8 +8,12 @@ h1, h2{
   font-weight: normal;
 }
 
-#wrapper{
-  width: 90%;
+.subhead {
+  text-align: center;
+}
+
+.wrapper{
+  width: 50%;
   max-width: 960px;
   margin: 20px auto;
   border-radius: 6px;
@@ -20,19 +24,19 @@ h1, h2{
   border: 1px solid lightgray;
 }
 
-#page-banner{
+.page-banner{
   background: #eee ;
   padding: 10px 0;
 
 }
 
-#page-banner h1, #page-banner p{
+.page-banner h1, #page-banner p{
   width: 100%;
   text-align: center;
   margin: 10px 0;
 }
 
-#page-banner input{
+.page-banner input{
   width: 90%;
   max-width: 300px;
   margin: 20px auto;
@@ -44,22 +48,22 @@ h1, h2{
   color: #444;
 }
 
-#book-list, #add-book, #tabbed-content{
+.book-list, #add-book, #tabbed-content{
   margin: 30px;
 }
 
-#book-list ul, #tabbed-content ul{
+.book-list ul, #tabbed-content ul{
   list-style-type: none;
   padding: 0;
 }
 
-#book-list li{
+.book-list li{
   padding: 20px;
   border-left: 5px solid #ddd;
   margin: 20px 10px;
 }
 
-#book-list li:hover{
+.book-list li:hover{
   border-color: #9361bf;
 }
 
@@ -76,12 +80,12 @@ h1, h2{
   background: #333;
 }
 
-#add-book{
+.add-book{
   width: 400px;
   margin: 0 auto;
 }
 
-#add-book input{
+.add-book input{
   display: block;
   margin: 20px 0;
   padding: 10px;
@@ -93,7 +97,7 @@ h1, h2{
   float: left;
 }
 
-#add-book button{
+.add-book button{
   border: 1px solid #9361bf;
   background: #9361bf;
   padding: 10px 20px;
@@ -109,7 +113,7 @@ h1, h2{
   color: white;
 }
 
-#add-book:after{
+.add-book:after{
   content: '';
   display: block;
   clear: both;

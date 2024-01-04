@@ -1,10 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import InputField from './components/InputField';
+import { Todo } from './components/model';
+import Todolist from './components/Todolist';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+    // changed the names of the state variables and setters to match the movie list
+    const [movie, setMovie] = useState<string>("");
+    const [movies, setMovies] = useState<Todo[]>([]);
+
+    const handleAdd = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (movie) {
+            setMovies([...movies, { id: Date.now(), Todo: movie, isDone: false }])
+            setMovie("");
+        }
+    };
+
+    console.log(movies);
 
   return (
     <>
@@ -34,15 +49,21 @@ function App() {
                     <span className="delete">delete</span>    
                 </li>
                 <li>
-                    <span className="name">SpclassNameerMan</span>
+                    <span className="name">Amazing SpiderMan</span>
                     <span className="delete">delete</span>
                 </li>
+                {movies.map((t) => (
+                    <li>
+                        {t.Todo}
+                        <span className='delete'>delete</span>
+                    </li>
+                        
+                ))}
             </ul>
+            <InputField movie={movie} setMovie={setMovie} handleAdd={handleAdd} />
+            <Todolist movies={movies} setMovies={setMovies}/>
         </div>
-        <form className="add-book">
-            <input type="text" placeholder="Add a movie..."/>
-            <button>Add</button>
-        </form>
+        
     </div>
     </>
   )
